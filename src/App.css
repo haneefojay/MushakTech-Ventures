@@ -1460,7 +1460,6 @@ body {
   }
 }
 
-/* Application Modal Styles */
 .application-modal {
   background: white;
   border-radius: 20px;
@@ -1563,7 +1562,6 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Form Enhancements */
 .form-input select,
 .form-textarea {
   resize: vertical;
@@ -1575,7 +1573,6 @@ body {
   box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
 }
 
-/* Application Modal Responsive */
 @media (max-width: 768px) {
   .application-modal {
     width: 98%;
@@ -1622,7 +1619,6 @@ body {
   }
 }
 
-/* Animation Keyframes */
 @media (max-width: 768px) {
   .nav {
     display: none;
@@ -1909,8 +1905,6 @@ body {
   }
 }
 
-/* New Animation Keyframes for Background Patterns */
-
 @keyframes circuitPulse {
   0%,
   100% {
@@ -1943,4 +1937,3 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
-@media
