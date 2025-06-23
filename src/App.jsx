@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser"
 import "./App.css"
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
   const [networkError, setNetworkError] = useState(false)
   const [formErrors, setFormErrors] = useState({})
   const [retryCount, setRetryCount] = useState(0)
-  const [paymentError, setPaymentError] = useState(null) // Declare setPaymentError variable
+  const [paymentError, setPaymentError] = useState(null)
 
   // Application State
   const [showApplicationModal, setShowApplicationModal] = useState(false)
@@ -50,10 +50,10 @@ function App() {
 
   // EmailJS Configuration
   const EMAILJS_CONFIG = {
-    SERVICE_ID: 'service_mb5d7in',
-    ADMIN_TEMPLATE_ID: 'template_6mw01p7',
-    USER_TEMPLATE_ID: 'template_un6egl3',
-    PUBLIC_KEY: 'OdNncT_OleCskIa9Z'
+    SERVICE_ID: "service_mb5d7in",
+    ADMIN_TEMPLATE_ID: "template_6mw01p7",
+    USER_TEMPLATE_ID: "template_un6egl3",
+    PUBLIC_KEY: "OdNncT_OleCskIa9Z",
   }
 
   // Initialize EmailJS
@@ -210,60 +210,80 @@ function App() {
 
   // EmailJS Functions
   const sendAdminNotification = async (applicationData) => {
-    const adminTemplateParams = {
-      to_email: 'admin@mushaktech.com', // Replace with your admin email
-      applicant_name: `${applicationData.firstName} ${applicationData.lastName}`,
-      applicant_email: applicationData.email,
-      applicant_phone: applicationData.phone,
-      applicant_country: applicationData.country,
-      experience_level: applicationData.experience,
-      selected_track: applicationData.track,
-      portfolio_url: applicationData.portfolio || 'Not provided',
-      motivation: applicationData.motivation,
-      availability: applicationData.availability,
-      application_date: new Date().toLocaleDateString(),
-      application_time: new Date().toLocaleTimeString(),
-    }
+    try {
+      const adminTemplateParams = {
+        to_email: "admin@mushaktech.com",
+        applicant_name: `${applicationData.firstName} ${applicationData.lastName}`,
+        applicant_email: applicationData.email,
+        applicant_phone: applicationData.phone,
+        applicant_country: applicationData.country,
+        experience_level: applicationData.experience,
+        selected_track: applicationData.track,
+        portfolio_url: applicationData.portfolio || "Not provided",
+        motivation: applicationData.motivation,
+        availability: applicationData.availability,
+        application_date: new Date().toLocaleDateString(),
+        application_time: new Date().toLocaleTimeString(),
+      }
 
-    return emailjs.send(
-      EMAILJS_CONFIG.SERVICE_ID,
-      EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
-      adminTemplateParams
-    )
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
+        adminTemplateParams,
+      )
+
+      console.log("Admin notification sent successfully:", result)
+      return { success: true, result }
+    } catch (error) {
+      console.error("Error sending admin notification:", error)
+      throw error
+    }
   }
 
   const sendUserConfirmation = async (applicationData) => {
-    const userTemplateParams = {
-      to_email: applicationData.email,
-      user_name: applicationData.firstName,
-      selected_track: applicationData.track,
-      application_date: new Date().toLocaleDateString(),
-      company_name: 'Mushak Tech Ventures',
-      support_email: 'hello@mushaktech.com', // Replace with your support email
-    }
+    try {
+      const userTemplateParams = {
+        to_email: applicationData.email,
+        user_name: applicationData.firstName,
+        selected_track: applicationData.track,
+        application_date: new Date().toLocaleDateString(),
+        company_name: "Mushak Tech Ventures",
+        support_email: "hello@mushaktech.com",
+      }
 
-    return emailjs.send(
-      EMAILJS_CONFIG.SERVICE_ID,
-      EMAILJS_CONFIG.USER_TEMPLATE_ID,
-      userTemplateParams
-    )
+      const result = await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.USER_TEMPLATE_ID, userTemplateParams)
+
+      console.log("User confirmation sent successfully:", result)
+      return { success: true, result }
+    } catch (error) {
+      console.error("Error sending user confirmation:", error)
+      throw error
+    }
   }
 
   const sendContactFormEmail = async (formData) => {
-    const contactTemplateParams = {
-      to_email: 'hello@mushaktech.com', // Replace with your contact email
-      from_name: `${formData.firstName} ${formData.lastName}`,
-      from_email: formData.email,
-      message: formData.message,
-      contact_date: new Date().toLocaleDateString(),
-      contact_time: new Date().toLocaleTimeString(),
-    }
+    try {
+      const contactTemplateParams = {
+        to_email: "hello@mushaktech.com",
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        message: formData.message,
+        contact_date: new Date().toLocaleDateString(),
+        contact_time: new Date().toLocaleTimeString(),
+      }
 
-    return emailjs.send(
-      EMAILJS_CONFIG.SERVICE_ID,
-      EMAILJS_CONFIG.ADMIN_TEMPLATE_ID, // Using admin template for contact form
-      contactTemplateParams
-    )
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
+        contactTemplateParams,
+      )
+
+      console.log("Contact form email sent successfully:", result)
+      return { success: true, result }
+    } catch (error) {
+      console.error("Error sending contact form email:", error)
+      throw error
+    }
   }
 
   // Error Handling Functions
@@ -304,7 +324,7 @@ function App() {
       setError({
         type: "email",
         title: "Email Service Error",
-        message: "There was an issue sending the email. Your application may have been received, but confirmation email failed.",
+        message: "There was an issue sending the email. Please try again or contact us directly.",
         action: "retry",
       })
     } else {
@@ -390,9 +410,8 @@ function App() {
     }
 
     try {
-      // Send contact form email
       await sendContactFormEmail(formData)
-      
+
       console.log("Contact form submitted:", formData)
       alert("Thank you for your message! We'll get back to you soon.")
       setFormData({
@@ -404,6 +423,9 @@ function App() {
     } catch (error) {
       console.error("Contact form email error:", error)
       handleError(error, "email")
+      alert(
+        "Sorry, there was an error sending your message. Please try again or contact us directly at hello@mushaktech.com",
+      )
     } finally {
       setIsSubmitting(false)
     }
@@ -507,18 +529,31 @@ function App() {
 
     try {
       // Send both admin notification and user confirmation emails
-      await Promise.all([
+      const results = await Promise.allSettled([
         sendAdminNotification(applicationData),
-        sendUserConfirmation(applicationData)
+        sendUserConfirmation(applicationData),
       ])
 
-      console.log("Application submitted successfully:", applicationData)
-      setApplicationSuccess(true)
+      // Check if at least one email was sent successfully
+      const adminResult = results[0]
+      const userResult = results[1]
 
-      // Auto close after success
-      setTimeout(() => {
-        closeApplicationModal()
-      }, 4000)
+      if (adminResult.status === "fulfilled") {
+        console.log("Application submitted successfully:", applicationData)
+        setApplicationSuccess(true)
+
+        // Show success message even if user email failed
+        if (userResult.status === "rejected") {
+          console.warn("User confirmation email failed, but application was received:", userResult.reason)
+        }
+
+        // Auto close after success
+        setTimeout(() => {
+          closeApplicationModal()
+        }, 4000)
+      } else {
+        throw new Error("Failed to submit application")
+      }
     } catch (error) {
       console.error("Application submission error:", error)
       handleError(error, "email")
