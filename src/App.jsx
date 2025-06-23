@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react"
 import emailjs from "@emailjs/browser"
+import Phone from "./assets/phone.png" 
+import Venue from "./assets/location.png";
+import Mail from "./assets/envelope-alt.png"
 import "./App.css"
 
 function App() {
@@ -651,7 +654,7 @@ function App() {
           <div className="loading-container">
             <div className="loading-logo">
               <div className="logo-icon loading-pulse">🚀</div>
-              <span className="logo-text">Mushak Tech Ventures</span>
+              <span className="logo-text">MushakTech Ventures</span>
             </div>
             <div className="loading-spinner">
               <div className="spinner-ring"></div>
@@ -693,7 +696,7 @@ function App() {
           <div className="header-content">
             <div className="logo">
               <div className="logo-badge">
-                <span className="logo-main">Mushak Tech</span>
+                <span className="logo-main">MushakTech</span>
                 <span className="logo-sub">Ventures</span>
               </div>
             </div>
@@ -729,8 +732,8 @@ function App() {
           <div className="hero-content">
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="badge-icon">🎯</span>
-                <span>Skilling entry-level talent</span>
+                <span className="badge-icon">⚡</span>
+                <span>Innovation Driven</span>
               </div>
               <h1 className="hero-title">
                 Building the Next Generation of <span className="hero-highlight">Tech Professionals</span>
@@ -765,7 +768,7 @@ function App() {
         <div className="container">
           <div className="fellowship-content">
             <div className="fellowship-header">
-              <h2 className="section-title">A Free One-Year Fellowship to Launch Your Tech Career</h2>
+              <h2 className="section-title">A hands-on training program for aspiring tech professionals</h2>
               <p className="section-description">
                 Our comprehensive program combines intensive training, real-world projects, and industry mentorship to
                 prepare you for success in the tech industry.
@@ -805,10 +808,9 @@ function App() {
               <span className="badge-icon">✨</span>
               <span>Learning Tracks</span>
             </div>
-            <h2 className="programs-title">Who is the fellowship for?</h2>
+            <h2 className="programs-title">Who is the training for?</h2>
             <p className="programs-description">
-              Mushak Tech Ventures fellowship is for entry-level tech talents with at least 1 year of working experience
-              in any of the following fields
+              Mushak Tech Ventures training program is for beginners in tech who are looking to gain experience in any of the following fields
             </p>
           </div>
           <div className="programs-grid">
@@ -821,13 +823,8 @@ function App() {
                 <p className="track-description">{course.description}</p>
                 <div className="track-details">
                   <div className="track-meta">
-                    <span className="track-duration">📅 {course.duration}</span>
                     <span className="track-level">📊 {course.level}</span>
-                  </div>
-                  <div className="track-stats">
-                    <span className="track-rating">⭐ {course.rating}</span>
-                    <span className="track-students">{course.students.toLocaleString()} graduates</span>
-                  </div>
+                  </div>                  
                 </div>
                 <div className="track-features">
                   {course.features.map((feature, index) => (
@@ -946,24 +943,30 @@ function App() {
               </p>
               <div className="contact-info">
                 <div className="contact-item">
-                  <div className="contact-icon">📧</div>
+                  <div className="contact-icon">
+                    <img src={Mail} />
+                  </div>
                   <div>
                     <h4>Email Us</h4>
-                    <p>hello@mushaktech.com</p>
+                    <p>mushaktechventures@gmail.com</p>
                   </div>
                 </div>
                 <div className="contact-item">
-                  <div className="contact-icon">📞</div>
+                  <div className="contact-icon">
+                    <img src={Phone} />
+                  </div>
                   <div>
                     <h4>Call Us</h4>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+2348151017391</p>
                   </div>
                 </div>
                 <div className="contact-item">
-                  <div className="contact-icon">📍</div>
+                  <div className="contact-icon">
+                    <img src={Venue} />
+                  </div>
                   <div>
                     <h4>Visit Us</h4>
-                    <p>123 Tech Street, Innovation District, CA 94105</p>
+                    <p>29 Ojutalayo Street, Logudu Bembo, Apata Ibadan, Oyo State</p>
                   </div>
                 </div>
               </div>
@@ -1050,7 +1053,7 @@ function App() {
             <div className="footer-section">
               <div className="footer-logo">
                 <div className="logo-badge">
-                  <span className="logo-main">Mushak Tech</span>
+                  <span className="logo-main">MushakTech</span>
                   <span className="logo-sub">Ventures</span>
                 </div>
               </div>
