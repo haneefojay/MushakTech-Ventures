@@ -78,7 +78,7 @@ function App() {
       instructor: "Sarah Johnson",
       students: 2847,
       rating: 4.9,
-      category: "Frontend",
+      category: "Frontend Development",
     },
     {
       id: 2,
@@ -92,7 +92,7 @@ function App() {
       instructor: "Michael Chen",
       students: 1923,
       rating: 4.8,
-      category: "Backend",
+      category: "Backend Development",
     },
     {
       id: 3,
@@ -106,7 +106,7 @@ function App() {
       instructor: "Lisa Park",
       students: 3241,
       rating: 4.8,
-      category: "Mobile",
+      category: "Mobile App Development"
     },
     {
       id: 4,
@@ -120,7 +120,7 @@ function App() {
       instructor: "Dr. Emily Rodriguez",
       students: 1456,
       rating: 4.9,
-      category: "AI/ML",
+      category: "AI & Machine Learning",
     },
     {
       id: 5,
@@ -134,7 +134,7 @@ function App() {
       instructor: "Michael Chen",
       students: 1923,
       rating: 4.8,
-      category: "Cloud",
+      category: "Cloud Architecture"
     },
     {
       id: 6,
@@ -148,7 +148,7 @@ function App() {
       instructor: "James Wilson",
       students: 2134,
       rating: 4.7,
-      category: "Security",
+      category: "Cybersecurity",
     },
   ]
 
@@ -215,7 +215,8 @@ function App() {
   const sendAdminNotification = async (applicationData) => {
     try {
       const adminTemplateParams = {
-        to_email: "admin@mushaktech.com",
+        to_email: "mushaktechventures@gmail.com",
+        company_name: "Mushak Tech Ventures",
         applicant_name: `${applicationData.firstName} ${applicationData.lastName}`,
         applicant_email: applicationData.email,
         applicant_phone: applicationData.phone,
@@ -251,7 +252,8 @@ function App() {
         selected_track: applicationData.track,
         application_date: new Date().toLocaleDateString(),
         company_name: "Mushak Tech Ventures",
-        support_email: "hello@mushaktech.com",
+        support_email: "mushaktechventures@gmail.com",
+        full_name: `${applicationData.firstName} ${applicationData.lastName}`,
       }
 
       const result = await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.USER_TEMPLATE_ID, userTemplateParams)
@@ -1123,7 +1125,7 @@ function ApplicationModal({
             <h2>Application Submitted Successfully!</h2>
             <p>
               Thank you for applying to {selectedTrack ? selectedTrack.title : "Mushak Tech Ventures"}! We've received
-              your application and will review it within 5-7 business days.
+              your application and will review it within 2-3 business days.
             </p>
             <p>You'll receive an email confirmation shortly with next steps.</p>
             <button className="btn btn-primary" onClick={onClose}>
@@ -1207,18 +1209,15 @@ function ApplicationModal({
             </div>
 
             <div className="form-group">
-              <label className="form-label">Country *</label>
-              <select
+              <label className="form-label">Country of residence *</label>
+              <input
                 name="country"
                 className={`form-input ${applicationErrors.country ? "error" : ""}`}
+                placeholder="Enter your country"
                 value={applicationData.country}
                 onChange={onInputChange}
                 required
-              >
-                <option value="">Select your country</option>
-                <option value="Nigeria">Nigeria</option>
-                <option value="Ghana">Ghana</option>
-              </select>
+              />              
               {applicationErrors.country && <span className="error-message">{applicationErrors.country}</span>}
             </div>
           </div>
@@ -1235,10 +1234,9 @@ function ApplicationModal({
                 required
               >
                 <option value="">Select experience level</option>
+                <option value="1-2 years">Beginner</option>
                 <option value="1-2 years">1-2 years</option>
-                <option value="2-3 years">2-3 years</option>
-                <option value="3-5 years">3-5 years</option>
-                <option value="5+ years">5+ years</option>
+                <option value="2-3 years">2+ years</option>
               </select>
               {applicationErrors.experience && <span className="error-message">{applicationErrors.experience}</span>}
             </div>
@@ -1283,7 +1281,7 @@ function ApplicationModal({
                 name="motivation"
                 rows="4"
                 className={`form-textarea ${applicationErrors.motivation ? "error" : ""}`}
-                placeholder="Tell us about your goals, what you hope to achieve, and why you're interested in this fellowship program... (minimum 50 characters)"
+                placeholder="Tell us about your goals, what you hope to achieve, and why you're interested in this training program... (minimum 50 characters)"
                 value={applicationData.motivation}
                 onChange={onInputChange}
                 required
