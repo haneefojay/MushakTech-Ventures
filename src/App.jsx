@@ -6,6 +6,7 @@ import { GraduationCap, Handshake, Briefcase, Rocket } from "lucide-react"
 import Phone from "./assets/phone.png" 
 import Venue from "./assets/location.png";
 import Mail from "./assets/envelope-alt.png";
+import View from "./assets/h.PNG";
 
 import "./App.css"
 
@@ -32,7 +33,6 @@ function App() {
   const [networkError, setNetworkError] = useState(false)
   const [formErrors, setFormErrors] = useState({})
   const [retryCount, setRetryCount] = useState(0)
-  const [paymentError, setPaymentError] = useState(null)
 
   // Application State
   const [showApplicationModal, setShowApplicationModal] = useState(false)
@@ -71,7 +71,7 @@ function App() {
     {
       id: 1,
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" d="M13 16.5a11 11 0 0 0 4.041 3.93l1.459.82v.25h-13v-.25l1.459-.82A11 11 0 0 0 11 16.5m-9.5-3h21m0-11h-21v14h21z" stroke-width="1"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" d="M13 16.5a11 11 0 0 0 4.041 3.93l1.459.82v.25h-13v-.25l1.459-.82A11 11 0 0 0 11 16.5m-9.5-3h21m0-11h-21v14h21z" strokeWidth="1"/></svg>
       ),
       title: "Basic Computer Literacy",
       description:
@@ -105,7 +105,7 @@ function App() {
     {
       id: 3,
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><radialGradient id="vscodeIconsFileTypeBat0" cx="22.737" cy="22.737" r="3.628" gradientTransform="rotate(-81.5 21.8 23.545)scale(1 1.071)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#bedcdc"/><stop offset=".5" stop-color="#8e9e9e" stop-opacity="0.74"/><stop offset="1" stop-color="#404f5c" stop-opacity="0.84"/></radialGradient><radialGradient id="vscodeIconsFileTypeBat1" cx="11.336" cy="11.336" r="5.201" gradientTransform="rotate(-81.5 10.869 11.738)scale(1 1.071)" href="#vscodeIconsFileTypeBat0"/></defs><path fill="#ffff" d="m24.811 27.318l2.404-2.404l1.202 2.404l-1.202 1.202zm-3.847.125h3.401l-.85 2.55h-1.7zm-2.807-2.632l2.404 2.404l-2.404 1.202l-1.203-1.202zm-.125-3.847v3.401l-2.55-.85v-1.7zm2.632-2.807l-2.404 2.404l-1.202-2.404l1.202-1.203zm3.846-.125h-3.4l.85-2.55h1.7zm2.808 2.632l-2.404-2.404l2.404-1.202l1.202 1.202zm.125 3.846v-3.4l2.55.85v1.7z"/><path fill="#ffff" d="M27.776 22.737a5.039 5.039 0 1 1-1.476-3.562a5.02 5.02 0 0 1 1.476 3.562m-5.039-1.9a1.9 1.9 0 1 0 1.344.557a1.9 1.9 0 0 0-1.344-.557"/><path fill="#ffff" d="M22.656 18.074a4.664 4.664 0 1 0 4.744 4.582a4.664 4.664 0 0 0-4.744-4.582m.15 8.61a3.947 3.947 0 1 1 3.877-4.015a3.947 3.947 0 0 1-3.877 4.015"/><path fill="url(#vscodeIconsFileTypeBat0)" d="M22.674 19.11a3.628 3.628 0 1 0 3.69 3.564a3.63 3.63 0 0 0-3.69-3.564m.1 5.7a2.073 2.073 0 1 1 2.037-2.11a2.073 2.073 0 0 1-2.037 2.11"/><path fill="#ffff" d="M22.7 20.665a2.073 2.073 0 1 0 2.11 2.035a2.073 2.073 0 0 0-2.11-2.035m.067 3.826a1.754 1.754 0 1 1 1.723-1.784a1.754 1.754 0 0 1-1.722 1.784Z"/><path fill="#ffff" d="m6.563 16.976l2.275 1.262l-1.464 1.568l-1.365-.757zm-2.181-3.142l1.34 2.23l-2.052.626l-.804-1.338zm-.317-3.811l.045 2.601l-2.09-.484l-.027-1.561zm1.631-3.46L4.434 8.838L2.866 7.374l.757-1.365zm3.142-2.181l-2.23 1.34l-.626-2.052l1.338-.804zm3.812-.317l-2.602.045l.484-2.09l1.561-.027zm3.459 1.631l-2.275-1.262l1.464-1.568l1.365.757zm2.181 3.142l-1.34-2.23l2.052-.626l.804 1.338zm.317 3.812l-.045-2.602l2.09.484l.027 1.561zm-1.631 3.459l1.262-2.275l1.568 1.464l-.757 1.365zm-3.142 2.181l2.23-1.34l.626 2.052l-1.338.804zm-3.811.317l2.601-.045l-.484 2.09l-1.561.027z"/><path fill="#ffff" d="M11.467 18.831a7.5 7.5 0 1 1 5.261-2.288a7.47 7.47 0 0 1-5.261 2.288m2.682-7.544a2.814 2.814 0 1 0-.789 2a2.8 2.8 0 0 0 .789-2"/><path fill="#ffff" d="M11.218 4.6a6.737 6.737 0 1 0 6.854 6.619A6.737 6.737 0 0 0 11.218 4.6m.217 12.436a5.7 5.7 0 1 1 5.6-5.8a5.7 5.7 0 0 1-5.599 5.8Z"/><path fill="url(#vscodeIconsFileTypeBat1)" d="M11.245 6.136a5.2 5.2 0 1 0 5.29 5.109a5.2 5.2 0 0 0-5.29-5.109m.14 8.036a2.837 2.837 0 1 1 2.787-2.886a2.837 2.837 0 0 1-2.786 2.886Z"/><path fill="#ffff" d="M11.282 8.227a3.109 3.109 0 1 0 3.163 3.055a3.11 3.11 0 0 0-3.163-3.055m.1 5.74a2.631 2.631 0 1 1 2.585-2.677a2.63 2.63 0 0 1-2.585 2.677"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 32 32"><defs><radialGradient id="vscodeIconsFileTypeBat0" cx="22.737" cy="22.737" r="3.628" gradientTransform="rotate(-81.5 21.8 23.545)scale(1 1.071)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#bedcdc"/><stop offset=".5" stopColor="#8e9e9e" stop-opacity="0.74"/><stop offset="1" stopColor="#404f5c" stop-opacity="0.84"/></radialGradient><radialGradient id="vscodeIconsFileTypeBat1" cx="11.336" cy="11.336" r="5.201" gradientTransform="rotate(-81.5 10.869 11.738)scale(1 1.071)" href="#vscodeIconsFileTypeBat0"/></defs><path fill="#ffff" d="m24.811 27.318l2.404-2.404l1.202 2.404l-1.202 1.202zm-3.847.125h3.401l-.85 2.55h-1.7zm-2.807-2.632l2.404 2.404l-2.404 1.202l-1.203-1.202zm-.125-3.847v3.401l-2.55-.85v-1.7zm2.632-2.807l-2.404 2.404l-1.202-2.404l1.202-1.203zm3.846-.125h-3.4l.85-2.55h1.7zm2.808 2.632l-2.404-2.404l2.404-1.202l1.202 1.202zm.125 3.846v-3.4l2.55.85v1.7z"/><path fill="#ffff" d="M27.776 22.737a5.039 5.039 0 1 1-1.476-3.562a5.02 5.02 0 0 1 1.476 3.562m-5.039-1.9a1.9 1.9 0 1 0 1.344.557a1.9 1.9 0 0 0-1.344-.557"/><path fill="#ffff" d="M22.656 18.074a4.664 4.664 0 1 0 4.744 4.582a4.664 4.664 0 0 0-4.744-4.582m.15 8.61a3.947 3.947 0 1 1 3.877-4.015a3.947 3.947 0 0 1-3.877 4.015"/><path fill="url(#vscodeIconsFileTypeBat0)" d="M22.674 19.11a3.628 3.628 0 1 0 3.69 3.564a3.63 3.63 0 0 0-3.69-3.564m.1 5.7a2.073 2.073 0 1 1 2.037-2.11a2.073 2.073 0 0 1-2.037 2.11"/><path fill="#ffff" d="M22.7 20.665a2.073 2.073 0 1 0 2.11 2.035a2.073 2.073 0 0 0-2.11-2.035m.067 3.826a1.754 1.754 0 1 1 1.723-1.784a1.754 1.754 0 0 1-1.722 1.784Z"/><path fill="#ffff" d="m6.563 16.976l2.275 1.262l-1.464 1.568l-1.365-.757zm-2.181-3.142l1.34 2.23l-2.052.626l-.804-1.338zm-.317-3.811l.045 2.601l-2.09-.484l-.027-1.561zm1.631-3.46L4.434 8.838L2.866 7.374l.757-1.365zm3.142-2.181l-2.23 1.34l-.626-2.052l1.338-.804zm3.812-.317l-2.602.045l.484-2.09l1.561-.027zm3.459 1.631l-2.275-1.262l1.464-1.568l1.365.757zm2.181 3.142l-1.34-2.23l2.052-.626l.804 1.338zm.317 3.812l-.045-2.602l2.09.484l.027 1.561zm-1.631 3.459l1.262-2.275l1.568 1.464l-.757 1.365zm-3.142 2.181l2.23-1.34l.626 2.052l-1.338.804zm-3.811.317l2.601-.045l-.484 2.09l-1.561.027z"/><path fill="#ffff" d="M11.467 18.831a7.5 7.5 0 1 1 5.261-2.288a7.47 7.47 0 0 1-5.261 2.288m2.682-7.544a2.814 2.814 0 1 0-.789 2a2.8 2.8 0 0 0 .789-2"/><path fill="#ffff" d="M11.218 4.6a6.737 6.737 0 1 0 6.854 6.619A6.737 6.737 0 0 0 11.218 4.6m.217 12.436a5.7 5.7 0 1 1 5.6-5.8a5.7 5.7 0 0 1-5.599 5.8Z"/><path fill="url(#vscodeIconsFileTypeBat1)" d="M11.245 6.136a5.2 5.2 0 1 0 5.29 5.109a5.2 5.2 0 0 0-5.29-5.109m.14 8.036a2.837 2.837 0 1 1 2.787-2.886a2.837 2.837 0 0 1-2.786 2.886Z"/><path fill="#ffff" d="M11.282 8.227a3.109 3.109 0 1 0 3.163 3.055a3.11 3.11 0 0 0-3.163-3.055m.1 5.74a2.631 2.631 0 1 1 2.585-2.677a2.63 2.63 0 0 1-2.585 2.677"/></svg>
       ),
       title: "Backend Development",
       description:
@@ -118,7 +118,7 @@ function App() {
     {
       id: 4,
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16"><path fill="currentColor" d="M14.25 2.1a1.25 1.25 0 0 0-1.17-.1L6.91 4.43a1.2 1.2 0 0 1-.46.09H2.5a1.25 1.25 0 0 0-1.25 1.25v.1H0v3h1.25V9a1.25 1.25 0 0 0 1.25 1.22L4 13.4a1.26 1.26 0 0 0 1.13.72h.63A1.25 1.25 0 0 0 7 12.87v-2.53l6.08 2.43a1.3 1.3 0 0 0 .47.09a1.3 1.3 0 0 0 .7-.22a1.25 1.25 0 0 0 .55-1V3.13a1.25 1.25 0 0 0-.55-1.03m-8.5 3.67V9H2.5V5.77zm0 7.1h-.63l-1.23-2.65h1.86zm1.62-3.72A2.3 2.3 0 0 0 7 9V5.7a2.3 2.3 0 0 0 .37-.11l6.18-2.46v8.48zm7.46-3.03v2.5a1.25 1.25 0 0 0 0-2.5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 16 16"><path fill="currentColor" d="M14.25 2.1a1.25 1.25 0 0 0-1.17-.1L6.91 4.43a1.2 1.2 0 0 1-.46.09H2.5a1.25 1.25 0 0 0-1.25 1.25v.1H0v3h1.25V9a1.25 1.25 0 0 0 1.25 1.22L4 13.4a1.26 1.26 0 0 0 1.13.72h.63A1.25 1.25 0 0 0 7 12.87v-2.53l6.08 2.43a1.3 1.3 0 0 0 .47.09a1.3 1.3 0 0 0 .7-.22a1.25 1.25 0 0 0 .55-1V3.13a1.25 1.25 0 0 0-.55-1.03m-8.5 3.67V9H2.5V5.77zm0 7.1h-.63l-1.23-2.65h1.86zm1.62-3.72A2.3 2.3 0 0 0 7 9V5.7a2.3 2.3 0 0 0 .37-.11l6.18-2.46v8.48zm7.46-3.03v2.5a1.25 1.25 0 0 0 0-2.5"/></svg>
       ),
       title: "Digital Marketing",
       description:
@@ -135,7 +135,7 @@ function App() {
     {
       id: 5,
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M19 32c-7.732 0-14-6.268-14-14S11.268 4 19 4s14 6.268 14 14"/><path d="M44 18H18v26h26z"/></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M19 32c-7.732 0-14-6.268-14-14S11.268 4 19 4s14 6.268 14 14"/><path d="M44 18H18v26h26z"/></g></svg>
       ),
       title: "Graphic Design",
       description:
@@ -225,85 +225,86 @@ function App() {
     setOpenFaq(openFaq === faqId ? null : faqId)
   }
 
-  // EmailJS Functions
-  const sendAdminNotification = async (applicationData) => {
-    try {
-      const adminTemplateParams = {
-        to_email: "mushaktechventures@gmail.com",
-        company_name: "Mushak Tech Ventures",
-        applicant_name: `${applicationData.firstName} ${applicationData.lastName}`,
-        applicant_email: applicationData.email,
-        applicant_phone: applicationData.phone,
-        applicant_country: applicationData.country,
-        experience_level: applicationData.experience,
-        selected_track: applicationData.track,
-        portfolio_url: applicationData.portfolio || "Not provided",
-        motivation: applicationData.motivation,
-        availability: applicationData.availability,
-        application_date: new Date().toLocaleDateString(),
-        application_time: new Date().toLocaleTimeString(),
-      }
-
-      const result = await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
-        adminTemplateParams,
-      )
-
-      console.log("Admin notification sent successfully:", result)
-      return { success: true, result }
-    } catch (error) {
-      console.error("Error sending admin notification:", error)
-      throw error
+// EmailJS Functions
+const sendAdminNotification = async (applicationData) => {
+  try {
+    const adminTemplateParams = {
+      to_email: "mushaktechventures@gmail.com",
+      company_name: "Mushak Tech Ventures",
+      applicant_name: `${applicationData.firstName} ${applicationData.lastName}`,
+      applicant_email: applicationData.email,
+      applicant_phone: applicationData.phone,
+      applicant_country: applicationData.country,
+      experience_level: applicationData.experience,
+      selected_track: applicationData.track,
+      portfolio_url: applicationData.portfolio || "Not provided",
+      motivation: applicationData.motivation,
+      availability: applicationData.availability,
+      application_date: new Date().toLocaleDateString(),
+      application_time: new Date().toLocaleTimeString(),
     }
+
+    const result = await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
+      adminTemplateParams,
+    )
+
+    return { success: true, result }
+  } catch (error) {
+    console.error("Error sending admin notification:", error)
+    throw error
   }
+}
 
-  const sendUserConfirmation = async (applicationData) => {
-    try {
-      const userTemplateParams = {
-        to_email: applicationData.email,
-        user_name: applicationData.firstName,
-        selected_track: applicationData.track,
-        application_date: new Date().toLocaleDateString(),
-        company_name: "Mushak Tech Ventures",
-        support_email: "mushaktechventures@gmail.com",
-        full_name: `${applicationData.firstName} ${applicationData.lastName}`,
-      }
-
-      const result = await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.USER_TEMPLATE_ID, userTemplateParams)
-
-      console.log("User confirmation sent successfully:", result)
-      return { success: true, result }
-    } catch (error) {
-      console.error("Error sending user confirmation:", error)
-      throw error
+const sendUserConfirmation = async (applicationData) => {
+  try {
+    const userTemplateParams = {
+      to_email: applicationData.email,
+      user_name: applicationData.firstName,
+      selected_track: applicationData.track,
+      application_date: new Date().toLocaleDateString(),
+      company_name: "Mushak Tech Ventures",
+      support_email: "mushaktechventures@gmail.com",
+      full_name: `${applicationData.firstName} ${applicationData.lastName}`,
     }
+
+    const result = await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.USER_TEMPLATE_ID,
+      userTemplateParams
+    )
+
+    return { success: true, result }
+  } catch (error) {
+    console.error("Error sending user confirmation:", error)
+    throw error
   }
+}
 
-  const sendContactFormEmail = async (formData) => {
-    try {
-      const contactTemplateParams = {
-        to_email: "hello@mushaktech.com",
-        from_name: `${formData.firstName} ${formData.lastName}`,
-        from_email: formData.email,
-        message: formData.message,
-        contact_date: new Date().toLocaleDateString(),
-        contact_time: new Date().toLocaleTimeString(),
-      }
-
-      const result = await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
-        contactTemplateParams,
-      )
-
-      console.log("Contact form email sent successfully:", result)
-      return { success: true, result }
-    } catch (error) {
-      console.error("Error sending contact form email:", error)
-      throw error
+const sendContactFormEmail = async (formData) => {
+  try {
+    const contactTemplateParams = {
+      to_email: "hello@mushaktech.com",
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      from_email: formData.email,
+      message: formData.message,
+      contact_date: new Date().toLocaleDateString(),
+      contact_time: new Date().toLocaleTimeString(),
     }
+
+    const result = await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
+      contactTemplateParams,
+    )
+
+    return { success: true, result }
+  } catch (error) {
+    console.error("Error sending contact form email:", error)
+    throw error
   }
+}
 
   // Error Handling Functions
   const handleError = (error, context = "general") => {
@@ -331,14 +332,6 @@ function App() {
         message: "Something went wrong on our end. Our team has been notified and is working on a fix.",
         action: "retry",
       })
-    } else if (context === "payment") {
-      setPaymentError({
-        type: "payment",
-        title: "Payment Failed",
-        message:
-          error.message || "Your payment could not be processed. Please check your payment details and try again.",
-        action: "retry",
-      })
     } else if (context === "email") {
       setError({
         type: "email",
@@ -359,7 +352,6 @@ function App() {
   const clearError = () => {
     setError(null)
     setNetworkError(false)
-    setPaymentError(null)
     setFormErrors({})
   }
 
@@ -519,144 +511,152 @@ function App() {
 
     return errors
   }
+const handleApplicationInputChange = (e) => {
+  const { name, value } = e.target
+  setApplicationData((prev) => ({
+    ...prev,
+    [name]: value,
+  }))
 
-  const handleApplicationInputChange = (e) => {
-    const { name, value } = e.target
-    setApplicationData((prev) => ({
+  if (applicationErrors[name]) {
+    setApplicationErrors((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: "",
     }))
+  }
+}
 
-    if (applicationErrors[name]) {
-      setApplicationErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }))
-    }
+const handleApplicationSubmit = async (e) => {
+  e.preventDefault()
+  setIsSubmittingApplication(true)
+  clearError()
+
+  const errors = validateApplicationForm(applicationData)
+  if (Object.keys(errors).length > 0) {
+    setApplicationErrors(errors)
+    setIsSubmittingApplication(false)
+    return
   }
 
-  const handleApplicationSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmittingApplication(true)
-    clearError()
+  try {
+    const results = await Promise.allSettled([
+      sendAdminNotification(applicationData),
+      sendUserConfirmation(applicationData),
+    ])
 
-    const errors = validateApplicationForm(applicationData)
-    if (Object.keys(errors).length > 0) {
-      setApplicationErrors(errors)
-      setIsSubmittingApplication(false)
-      return
+    const adminResult = results[0]
+    const userResult = results[1]
+
+    if (adminResult.status === "fulfilled") {
+      setApplicationSuccess(true)
+
+      // Optional: show notification if user email fails silently
+      if (userResult.status === "rejected") {
+        // Optional: You could set a flag to display a message to user/admin
+      }
+
+      setTimeout(() => {
+        closeApplicationModal()
+      }, 4000)
+    } else {
+      throw new Error("Failed to submit application")
     }
+  } catch (error) {
+    console.error("Application submission error:", error)
+    handleError(error, "email")
+  } finally {
+    setIsSubmittingApplication(false)
+  }
+}
 
+
+  useEffect(() => {
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -100px 0px",
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.target) {
+        entry.target.classList.add("animate-in")
+
+        const animateElements = entry.target.querySelectorAll(".animate-on-scroll")
+        animateElements?.forEach((element, index) => {
+          setTimeout(() => {
+            element?.classList?.add("animate-in")
+          }, index * 100)
+        })
+      }
+    })
+  }, observerOptions)
+
+  const targets = document.querySelectorAll("section, .animate-on-scroll")
+
+  targets.forEach((el) => observer.observe(el))
+
+  return () => observer.disconnect()
+}, [])
+
+
+useEffect(() => {
+  let timer = null;
+
+  const initializeApp = async () => {
     try {
-      // Send both admin notification and user confirmation emails
-      const results = await Promise.allSettled([
-        sendAdminNotification(applicationData),
-        sendUserConfirmation(applicationData),
-      ])
-
-      // Check if at least one email was sent successfully
-      const adminResult = results[0]
-      const userResult = results[1]
-
-      if (adminResult.status === "fulfilled") {
-        console.log("Application submitted successfully:", applicationData)
-        setApplicationSuccess(true)
-
-        // Show success message even if user email failed
-        if (userResult.status === "rejected") {
-          console.warn("User confirmation email failed, but application was received:", userResult.reason)
-        }
-
-        // Auto close after success
-        setTimeout(() => {
-          closeApplicationModal()
-        }, 4000)
-      } else {
-        throw new Error("Failed to submit application")
+      // Simulate a loading error on retry (30% chance)
+      if (retryCount > 0 && Math.random() < 0.3) {
+        throw new Error("Failed to load application data");
       }
+
+      timer = setTimeout(() => {
+        setIsLoading(false);
+
+        // Staggered section loading
+        const delays = [200, 400, 600, 800, 1000];
+        const keys = ["hero", "about", "services", "courses", "contact"];
+
+        keys.forEach((key, index) => {
+          setTimeout(() => {
+            setSectionsLoading((prev) => ({ ...prev, [key]: false }));
+          }, delays[index]);
+        });
+      }, 1500);
     } catch (error) {
-      console.error("Application submission error:", error)
-      handleError(error, "email")
-    } finally {
-      setIsSubmittingApplication(false)
+      handleError(error, "initialization");
+      setIsLoading(false);
     }
-  }
+  };
 
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -100px 0px",
-    }
+  initializeApp();
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-in")
+  return () => {
+    if (timer) clearTimeout(timer);
+  };
+}, [retryCount]);
 
-          const animateElements = entry.target.querySelectorAll(".animate-on-scroll")
-          animateElements.forEach((element, index) => {
-            setTimeout(() => {
-              element.classList.add("animate-in")
-            }, index * 100)
-          })
-        }
-      })
-    }, observerOptions)
-
-    const sections = document.querySelectorAll("section")
-    const animateElements = document.querySelectorAll(".animate-on-scroll")
-
-    sections.forEach((section) => observer.observe(section))
-    animateElements.forEach((element) => observer.observe(element))
-
-    return () => observer.disconnect()
-  }, [])
-
-  // Initial page loading with error handling
-  useEffect(() => {
-    const initializeApp = async () => {
-      try {
-        if (retryCount > 0 && Math.random() < 0.3) {
-          throw new Error("Failed to load application data")
-        }
-
-        const timer = setTimeout(() => {
-          setIsLoading(false)
-          setTimeout(() => setSectionsLoading((prev) => ({ ...prev, hero: false })), 200)
-          setTimeout(() => setSectionsLoading((prev) => ({ ...prev, about: false })), 400)
-          setTimeout(() => setSectionsLoading((prev) => ({ ...prev, services: false })), 600)
-          setTimeout(() => setSectionsLoading((prev) => ({ ...prev, courses: false })), 800)
-          setTimeout(() => setSectionsLoading((prev) => ({ ...prev, contact: false })), 1000)
-        }, 1500)
-
-        return () => clearTimeout(timer)
-      } catch (error) {
-        handleError(error, "initialization")
-        setIsLoading(false)
-      }
-    }
-
-    initializeApp()
-  }, [retryCount])
 
   // Global error boundary effect
-  useEffect(() => {
-    const handleUnhandledError = (event) => {
-      handleError(new Error(event.error?.message || "An unexpected error occurred"), "global")
-    }
+useEffect(() => {
+  const handleUnhandledError = (event) => {
+    const message = event?.error?.message || "An unexpected error occurred";
+    handleError(new Error(message), "global");
+  };
 
-    const handleUnhandledRejection = (event) => {
-      handleError(new Error(event.reason?.message || "An unexpected error occurred"), "global")
-    }
+  const handleUnhandledRejection = (event) => {
+    const message = event?.reason?.message || "An unexpected promise rejection";
+    handleError(new Error(message), "global");
+  };
 
-    window.addEventListener("error", handleUnhandledError)
-    window.addEventListener("unhandledrejection", handleUnhandledRejection)
+  window.addEventListener("error", handleUnhandledError);
+  window.addEventListener("unhandledrejection", handleUnhandledRejection);
 
-    return () => {
-      window.removeEventListener("error", handleUnhandledError)
-      window.removeEventListener("unhandledrejection", handleUnhandledRejection)
-    }
-  }, [])
+  return () => {
+    window.removeEventListener("error", handleUnhandledError);
+    window.removeEventListener("unhandledrejection", handleUnhandledRejection);
+  };
+}, []);
+
 
   // Render error page if there's a critical error
   if (error && (error.type === "network" || error.type === "server")) {
@@ -773,7 +773,7 @@ function App() {
             <div className="hero-right">
               <div className="hero-image-container">
                 <img
-                  src="/images/team-collaboration.jpg"
+                  src={View}
                   alt="Team collaboration and learning"
                   className="hero-image"
                 />
@@ -1167,7 +1167,7 @@ function ApplicationModal({
     <div className="modal-overlay" onClick={onClose}>
       <div className="application-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>Apply for {selectedTrack ? selectedTrack.title : "Fellowship Program"}</h2>
+          <h2>Apply for {selectedTrack ? selectedTrack.title : "Training Program"}</h2>
           <button className="close-btn" onClick={onClose}>
             ×
           </button>

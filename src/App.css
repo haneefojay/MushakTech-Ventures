@@ -135,7 +135,7 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #2b6cb0;
+  background: #2c5282;
   color: white;
 }
 
@@ -335,8 +335,8 @@ body {
   bottom: 0;
   background-image: linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
     linear-gradient(0deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
-    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, #0f1419 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, #0f1419 0%, transparent 50%);
   background-size: 60px 60px, 60px 60px, 800px 800px, 600px 600px;
   animation: circuitPulse 15s ease-in-out infinite;
 }
@@ -870,8 +870,8 @@ body {
 }
 
 .error-message {
-  font-size: 1.25rem;
-  color: #6b7280;
+  font-size: 0.8rem;
+  color: red;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
