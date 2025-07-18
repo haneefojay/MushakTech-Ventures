@@ -18,7 +18,6 @@ The MushakTech Ventures Training Portal is a professional platform designed to f
 - **Email Service**: [EmailJS](https://www.emailjs.com/)
 - **Hosting**: [Vercel](https://vercel.com)
 
----
 
 ## 📨 Email Functionality
 The application uses EmailJS to send emails:
@@ -38,7 +37,7 @@ For support, inquiries, or more information, please contact:
 
 MushakTech Ventures
 📧 mushaktechventures@gmail.com
-🌐 www.mushaktech
+🌐 www.mushaktechventures.com
 
 
 ## 📄 License
