@@ -1,12 +1,47 @@
-# React + Vite
+# 🌐 MushakTech Ventures Training Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The MushakTech Ventures Training Portal is a professional platform designed to facilitate applications, showcase available training tracks, and enable effective communication with prospective participants. This website serves as a central hub for individuals interested in launching their careers in technology through structured, hands-on learning experiences.
 
-Currently, two official plugins are available:
+## 📌 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Structured training track presentation
+- Application submission with automated email confirmations
+- Contact form with direct email delivery
+- Responsive and accessible interface
+- Clear error handling and submission feedback
+- Optimized performance for both desktop and mobile devices
 
-## Expanding the ESLint configuration
+## 🛠 Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React (JavaScript)
+- **Styling**: Plain CSS
+- **Email Service**: [EmailJS](https://www.emailjs.com/)
+- **Hosting**: [Vercel](https://vercel.com)
+
+---
+
+## 📨 Email Functionality
+The application uses EmailJS to send emails:
+
+Admins receive application and contact form notifications.
+
+Applicants receive confirmation emails upon successful form submission.
+
+
+## 🧑‍💻 Maintainer
+
+Built by MushakTech Ventures
+
+
+## 📫 Contact Information
+For support, inquiries, or more information, please contact:
+
+MushakTech Ventures
+📧 mushaktechventures@gmail.com
+🌐 www.mushaktech
+
+
+## 📄 License
+This project is provided for educational and professional training purposes.
+All content and code are the intellectual property of MushakTech Ventures.
+© 2025 All Rights Reserved.

@@ -55,11 +55,12 @@ function App() {
 
   // EmailJS Configuration
   const EMAILJS_CONFIG = {
-    SERVICE_ID: "service_mb5d7in",
-    ADMIN_TEMPLATE_ID: "template_6mw01p7",
-    USER_TEMPLATE_ID: "template_un6egl3",
-    PUBLIC_KEY: "OdNncT_OleCskIa9Z",
+    SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    ADMIN_TEMPLATE_ID: import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID,
+    USER_TEMPLATE_ID: import.meta.env.VITE_EMAILJS_USER_TEMPLATE_ID,
+    PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
   }
+
 
   // Initialize EmailJS
   useEffect(() => {
@@ -285,10 +286,10 @@ const sendUserConfirmation = async (applicationData) => {
 const sendContactFormEmail = async (formData) => {
   try {
     const contactTemplateParams = {
-      to_email: "hello@mushaktech.com",
-      from_name: `${formData.firstName} ${formData.lastName}`,
-      from_email: formData.email,
-      message: formData.message,
+      to_email: "mushaktechventures@gmail.com",
+      applicant_name: `${formData.firstName} ${formData.lastName}`,
+      applicant_email: formData.email,
+      motivation: formData.message,
       contact_date: new Date().toLocaleDateString(),
       contact_time: new Date().toLocaleTimeString(),
     }
@@ -423,7 +424,7 @@ const sendContactFormEmail = async (formData) => {
     try {
       await sendContactFormEmail(formData)
 
-      console.log("Contact form submitted:", formData)
+      console.log("Contact form submitted:")
       alert("Thank you for your message! We'll get back to you soon.")
       
       setFormData({
@@ -1151,7 +1152,7 @@ function ApplicationModal({
             <h2>Application Submitted Successfully!</h2>
             <p>
               Thank you for applying to {selectedTrack ? selectedTrack.title : "Mushak Tech Ventures"}! We've received
-              your application and will review it within 2-3 business days.
+              your application and will review it shortly.
             </p>
             <p>You'll receive an email confirmation shortly with next steps.</p>
             <button className="btn btn-primary" onClick={onClose}>
@@ -1259,8 +1260,8 @@ function ApplicationModal({
                 onChange={onInputChange}
                 required
               >
-                <option value="">Select experience level</option>
-                <option value="1-2 years">Beginner</option>
+                <option value="">Select your experience level</option>
+                <option value="Beginner">Beginner</option>
                 <option value="1-2 years">1-2 years</option>
                 <option value="2-3 years">2+ years</option>
               </select>
@@ -1395,20 +1396,7 @@ function ErrorToast({ error, onClose }) {
     }
   }, [error, onClose])
 
-  return (
-    <div className={`error-toast ${error.type}`}>
-      <div className="toast-content">
-        <div className="toast-icon">{error.type === "info" ? "ℹ️" : error.type === "warning" ? "⚠️" : "❌"}</div>
-        <div className="toast-message">
-          <h4>{error.title}</h4>
-          <p>{error.message}</p>
-        </div>
-        <button className="toast-close" onClick={onClose}>
-          ×
-        </button>
-      </div>
-    </div>
-  )
+  return null;
 }
 
 export default App
