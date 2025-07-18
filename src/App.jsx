@@ -423,8 +423,6 @@ const sendContactFormEmail = async (formData) => {
 
     try {
       await sendContactFormEmail(formData)
-
-      console.log("Contact form submitted:")
       alert("Thank you for your message! We'll get back to you soon.")
       
       setFormData({
@@ -434,10 +432,9 @@ const sendContactFormEmail = async (formData) => {
         message: "",
       })
     } catch (error) {
-      console.error("Contact form email error:", error)
       handleError(error, "email")
       alert(
-        "Sorry, there was an error sending your message. Please try again or contact us directly at hello@mushaktech.com",
+        "Sorry, there was an error sending your message. Please try again or contact us directly at mushaktechventures@gmail.com",
       )
     } finally {
       setIsSubmitting(false)
@@ -1379,8 +1376,8 @@ function ErrorPage({ error, onRetry, onClear }) {
         </div>
         <div className="error-help">
           <p>If the problem persists, please contact our support team:</p>
-          <a href="mailto:support@mushaktech.com" className="error-contact">
-            support@mushaktech.com
+          <a href="mushaktechventures@gmail.com" className="error-contact">
+            mushaktechventures@gmail.com
           </a>
         </div>
       </div>
