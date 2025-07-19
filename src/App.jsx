@@ -1117,7 +1117,7 @@ useEffect(() => {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 Mushak Tech Ventures. All rights reserved.</p>
+            <p>&copy; 2025 Mushak Tech Ventures. All rights reserved.</p>
           </div>
         </div>
       </footer>
